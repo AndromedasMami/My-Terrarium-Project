@@ -1,10 +1,31 @@
+.grid-container {
+	display: grid;
+	grid-template-columns: 18% 64% 18%;
+	grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+	gap: 0px 0px;
+	grid-template-areas:
+	  "Header Header Header"
+	  "Left-Container Terrarium Right-Container"
+	  "Left-Container Terrarium Right-Container"
+	  "Left-Container Terrarium Right-Container"
+	  "Left-Container Terrarium Right-Container"
+	  "Left-Container Terrarium Right-Container"
+	  "Left-Container Terrarium Right-Container"
+	  "Left-Container Terrarium Right-Container";
+  }
+
 body {
 	font-family: helvetica, arial, sans-serif;
 }
+
+.Header { grid-area: Header; }
+
 h1 {
 	color: #3a241d;
 	text-align: center;
 }
+.Left-Container { grid-area: Left-Container; }
+
 #left-container {
 	background-color: #eee;
 	width: 15%;
@@ -13,9 +34,8 @@ h1 {
 	position: absolute;
 	height: 100%;
 	padding: 10px;
-    
 }
-
+.Right-Container { grid-area: Right-Container; }
 #right-container {
 	background-color: #eee;
 	width: 15%;
@@ -25,20 +45,20 @@ h1 {
 	height: 100%;
 	padding: 10px;
 }
+
 .plant-holder {
-	display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    
+	position: relative;
+	height: 13%;
+	left: -10px;
 }
 
-.plant {  
-    position: absolute;
+.plant {
+	position: absolute;
 	max-width: 150%;
 	max-height: 150%;
-	z-index: 3;
-    
+	z-index: 2;
 }
+.Terrarium { grid-area: Terrarium; }
 .jar-walls {
 	height: 80%;
 	width: 60%;
@@ -48,7 +68,7 @@ h1 {
 	bottom: 0.5%;
 	left: 20%;
 	opacity: 0.5;
-	z-index: 2;
+	z-index: 1;
 }
 
 .jar-top {
@@ -59,7 +79,7 @@ h1 {
 	bottom: 80.5%;
 	left: 25%;
 	opacity: 0.7;
-	z-index: 2;
+	z-index: 1;
 }
 
 .jar-bottom {
